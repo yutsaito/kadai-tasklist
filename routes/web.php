@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+getで'/'にｱｸｾｽされたら、viewsﾌｫﾙﾀﾞ中のwelcome.blade.phpを実行するようにreturnする'
+*/
