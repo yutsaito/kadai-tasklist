@@ -47,6 +47,11 @@ class TasksController extends Controller
         $task=new Task;
         $task->content=$request->content;
         //受け取った変数requestのcontentを、変数taskのcontentに入れる
+        
+        $task->content_detail=$request->content_detail;
+        $task->deadline=$request->deadline;
+        $task->status=$request->status;
+        
         $task->save();
         //ｲﾝｽﾀﾝｽ$taskのsave()関数を実行
         

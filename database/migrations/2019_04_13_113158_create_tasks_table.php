@@ -14,8 +14,9 @@ class CreateTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
+            //接続しているMySQLﾃﾞｰﾀﾍﾞｰｽにtasksﾃｰﾌﾞﾙを作成し、作成するｶﾗﾑも指定
             $table->increments('id');
-            $table->string('content');    // content カラム追加      
+            $table->string('content');    // content カラム追加 
             $table->timestamps();
         });
     }

@@ -8,6 +8,9 @@
                 <tr>
                     <th>id</th>
                     <th>タスク</th>
+                    <th>内容</th>
+                    <th>デッドライン</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,6 +20,9 @@
                     <td>{!! link_to_route('tasks.show',$task->id,['id'=>$task->id])!!}</td>
                     <!-- 第1引数:ﾙｰﾃｨﾝｸﾞ名、第2:ﾘﾝｸにしたい文字列、第3:URLﾊﾟﾗﾒｰﾀに代入したい値 -->
                     <td>{{$task->content}}</td>   <!-- $taskのcontentｶﾗﾑの内容を表示 -->
+                    <td>{{$task->content_detail}}</td>                     
+                    <td>{{$task->deadline}}</td>                     
+                    <td>{{$task->status}}</td>                     
                 </tr>
                 @endforeach    
             </tbody>
