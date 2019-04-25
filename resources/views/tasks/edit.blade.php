@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('content')
+
+    @if(count($errors)>0)
+        <ul class="alert alert-danger" role="alert">
+            @foreach($errors->all() as $error)
+                <li class="ml-4">{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
+
     <h1>id:{{$task->id}}のタスク編集ページ</h1>
     
     <div class="row">
@@ -13,7 +22,10 @@
                              {{-- Form::label()　第一引数：Form::model()で指定したTaskﾓﾃﾞﾙｲﾝｽﾀﾝｽ$taskのｶﾗﾑ、第2：ラベル名 --}}                
                     {!! Form::text('content', null, ['class'=>'form-control'])!!}
                              {{-- Form::text()で、htmlのinput type="text"を生成 --}} 
-                             {{-- 第1引数：Form::model()で指定したTaskﾓﾃﾞﾙｲﾝｽﾀﾝｽ$taskのｶﾗﾑ、第2：初期表示text、第3：ﾀｸﾞ属性情報 --}}                
+                             {{-- 第1引数：Form::model()で指定したTaskﾓﾃﾞﾙｲﾝｽﾀﾝｽ$taskのｶﾗﾑ、第2：初期表示text、第3：ﾀｸﾞ属性情報 --}}
+                    {!! Form::text('content_detail', null, ['class'=>'form-control'])!!}
+                    {!! Form::date('deadline', null, ['class'=>'form-control'])!!}                             
+                    {!! Form::text('status', null, ['class'=>'form-control'])!!}                             
                 </div>
                 
                 {!! Form::submit('更新',['class'=>'btn btn-light'])!!}

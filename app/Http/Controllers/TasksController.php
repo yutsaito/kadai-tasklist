@@ -44,6 +44,15 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'content'=>'required|max:191',
+            ]);
+        $this->validate($request,[
+            'content_detail'=>'required|max:191']);
+        $this->validate($request,[
+            'deadline'=>'required']);            
+        $this->validate($request,[
+            'status'=>'required|max:10']);              
         $task=new Task;
         $task->content=$request->content;
         //受け取った変数requestのcontentを、変数taskのcontentに入れる
@@ -99,9 +108,21 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'content'=>'required|max:191']);
+        $this->validate($request,[
+            'content_detail'=>'required|max:191']);
+        $this->validate($request,[
+            'deadline'=>'required']);             
+        $this->validate($request,[
+            'status'=>'required|max:10']);            
         $task=Task::find($id);
         $task->content=$request->content;
-        //受け取った変数requestのcontentを、変数taskのcontentに入れる        
+        //受け取った変数requestのcontentを、変数taskのcontentに入れる  
+        $task->content_detail=$request->content_detail;
+        $task->deadline=$request->deadline;
+        $task->status=$request->status;
+                
         $task->save();
         
         return redirect('/');

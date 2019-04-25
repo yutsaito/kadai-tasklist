@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTitleToTasksTable extends Migration
+class AddStatusToTaskTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddTitleToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('content_detail');
-            $table->date('deadline');
-            $table->string('status',10);
+            //
         });
     }
 

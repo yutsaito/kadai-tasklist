@@ -30,7 +30,7 @@
     @endif
     
     <!--indexのviewからcreateのViewへ遷移するﾘﾝｸ-->
-   {!! link_to_route('tasks.create', '新規メッセージの投稿', null, ['class' => 'btn btn-primary']) !!}
+   {!! link_to_route('tasks.create', '新規タスクの追加', null, ['class' => 'btn btn-primary']) !!}
     <!--第一引数：ﾙｰﾃｨﾝｸﾞ名（ﾘﾝｸ先）、第二引数：ﾘﾝｸしたい文字列、-->
     <!--、第三引数：URL内のﾊﾟﾗﾒｰﾀに代入したい値を配列形式で第四引数：HTMLﾀｸﾞの属性を配列形式で-->
     <!--つまり、tasksﾌｫﾙﾀﾞのcreate.blade.phpへ、新規ﾀｽｸの登録、btn,primary(boostrap)の、をﾘﾝｸさせる-->
